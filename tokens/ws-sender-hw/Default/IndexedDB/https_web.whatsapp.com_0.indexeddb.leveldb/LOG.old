@@ -1,0 +1,22 @@
+2022/09/09-09:16:12.473 445c Reusing MANIFEST C:\Users\GEFI\OneDrive - GFT Technologies SE\Documents\DESKTOP\DESAFIOS\5\whatsapp-api-hw\tokens\ws-sender-hw\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2022/09/09-09:16:12.474 445c Recovering log #12
+2022/09/09-09:16:12.532 445c Reusing old log C:\Users\GEFI\OneDrive - GFT Technologies SE\Documents\DESKTOP\DESAFIOS\5\whatsapp-api-hw\tokens\ws-sender-hw\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000012.log 
+2022/09/09-09:16:24.821 155c Level-0 table #18: started
+2022/09/09-09:16:24.885 155c Level-0 table #18: 1067193 bytes OK
+2022/09/09-09:16:24.890 155c Delete type=0 #12
+2022/09/09-09:16:24.895 155c Compacting 1@1 + 2@2 files
+2022/09/09-09:16:24.997 155c Generated table #19@1: 29672 keys, 2228537 bytes
+2022/09/09-09:16:25.021 155c Generated table #20@1: 13187 keys, 402853 bytes
+2022/09/09-09:16:25.022 155c Compacted 1@1 + 2@2 files => 2631390 bytes
+2022/09/09-09:16:25.023 155c compacted to: files[ 0 0 2 0 0 0 0 ]
+2022/09/09-09:16:25.023 155c Delete type=2 #14
+2022/09/09-09:16:25.023 155c Delete type=2 #15
+2022/09/09-09:16:25.023 155c Delete type=2 #18
+2022/09/09-09:16:31.817 1c88 Level-0 table #22: started
+2022/09/09-09:16:31.848 1c88 Level-0 table #22: 1196163 bytes OK
+2022/09/09-09:16:31.849 1c88 Delete type=0 #17
+2022/09/09-09:16:31.856 1c88 Compacting 1@1 + 2@2 files
+2022/09/09-09:16:31.919 1c88 Generated table #23@1: 28641 keys, 2221155 bytes
+2022/09/09-09:16:31.955 1c88 Generated table #24@1: 20771 keys, 879812 bytes
+2022/09/09-09:16:31.955 1c88 Compacted 1@1 + 2@2 files => 3100967 bytes
+2022/09/09-09:16:31.956 1c88 compacted to: files[ 0 0 2 0 0 0 0 ]
