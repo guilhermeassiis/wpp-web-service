@@ -1,6 +1,5 @@
-import { Whatsapp, create } from 'venom-bot';
-import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js';
-
+import { isValidPhoneNumber, parsePhoneNumber } from 'libphonenumber-js';
+import { create, Whatsapp } from 'venom-bot';
 
 
 export class Sender {
@@ -20,6 +19,7 @@ export class Sender {
     phoneNumber = phoneNumber.includes("@c.us") ? phoneNumber : `${phoneNumber}@c.us`;
 
     await this.client.sendText(phoneNumber, body);
+    
   }
 
   private initialize() {
