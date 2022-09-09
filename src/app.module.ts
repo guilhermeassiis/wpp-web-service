@@ -1,8 +1,9 @@
+import { WppModule } from './Whatsapp/wpp.module';
 import { Module } from '@nestjs/common';
 
 
 @Module({
-  imports: [],
+  imports: [WppModule],
   controllers: [],
   providers: [],
 })
