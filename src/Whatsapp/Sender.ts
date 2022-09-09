@@ -1,4 +1,5 @@
 import { Whatsapp, create } from 'venom-bot';
+import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js';
 
 export class Sender {
   private client: Whatsapp;
@@ -8,7 +9,15 @@ export class Sender {
   }
 
   async sendText(to: string, body: string) {
-    await this.client.sendText(to, body);
+
+    if(!isValidPhoneNumber(to, "BR")) {
+      throw new Error("This number is not valid");
+    }
+
+    let phoneNumber = parsePhoneNumber(to, "BR")?.format("E.164").replace('+', '') as string;
+    phoneNumber = phoneNumber.includes("@c.us") ? phoneNumber : `${phoneNumber}@c.us`;
+    console.log(phoneNumber);
+    await this.client.sendText(phoneNumber, body);
   }
 
   private initialize() {
@@ -20,7 +29,6 @@ export class Sender {
 
     const start = async (client: Whatsapp) => { 
         this.client = client;
-        await this.sendText("558199792209@c.us", "Boa noite mensagem enviada a partir da API HAPPYWALLET");
     };
 
     create("ws-sender-hw", qr, status)
