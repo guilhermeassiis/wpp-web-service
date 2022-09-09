@@ -1,6 +1,7 @@
 import { Message } from './message-entity';
 import { WppService } from './wpp.service';
 import { BadRequestException, Body, Controller, HttpCode, Post } from '@nestjs/common';
+import { Get } from '@nestjs/common/decorators';
 
 
 @Controller('v1/wpp')

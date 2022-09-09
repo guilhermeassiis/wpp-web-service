@@ -1,4 +1,7 @@
 import { Whatsapp, create } from 'venom-bot';
+import { parsePhoneNumber, isValidPhoneNumber } from 'libphonenumber-js';
+
+
 
 export class Sender {
   private client: Whatsapp;
@@ -8,7 +11,15 @@ export class Sender {
   }
 
   async sendText(to: string, body: string) {
-    await this.client.sendText(to, body);
+
+    if(!isValidPhoneNumber(to, "BR")) {
+      throw new Error("This number is not valid");
+    }
+
+    let phoneNumber = parsePhoneNumber(to, "BR")?.format("E.164").replace('+', '') as string;
+    phoneNumber = phoneNumber.includes("@c.us") ? phoneNumber : `${phoneNumber}@c.us`;
+
+    await this.client.sendText(phoneNumber, body);
   }
 
   private initialize() {
@@ -16,19 +27,15 @@ export class Sender {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     const qr = (base64Qrimg: string) => { }
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    const status = (statusSession: string, session: string) => { }
+    const status = (statusSession: string) => { }
 
     const start = async (client: Whatsapp) => { 
         this.client = client;
     };
 
-    create({
-      session: 'sender-hw',
-      catchQR: qr,
-      statusFind: status
-    }).then((client) => start(client))
-      .catch((erro) => console.error(erro));
-      
+    create("ws-sender-hw", qr, status)
+        .then((client) => start(client))
+        .catch((error) => console.error(error));
   }
 
 }
